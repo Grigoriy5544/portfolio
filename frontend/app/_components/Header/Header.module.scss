@@ -1,0 +1,52 @@
+@import "app/mixin";
+@import "app/variables";
+
+.header {
+  height: 100px;
+  @include flex-center-sb;
+
+  > .logo {
+    font-weight: 700;
+    font-size: 22px;
+
+    @media screen and (max-width: 400px) {
+      font-size: 16px;
+    }
+  }
+
+  > .navigation {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    @media screen and (max-width: 500px) {
+      gap: 15px;
+    }
+
+    > .navList {
+      @include flex-center-sb;
+      gap: 20px;
+
+      @media screen and (max-width: 500px) {
+        gap: 10px;
+      }
+
+      .navListItem {
+        cursor: pointer;
+      }
+    }
+
+    .navLine {
+      width: 1px;
+      height: 24px;
+      float: left;
+      background: #1F2937;
+    }
+
+    .themeIcon {
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+    }
+  }
+}

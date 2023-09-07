@@ -1,0 +1,83 @@
+@import "app/mixin";
+
+.container {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+
+  .card {
+    padding: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+    width: fit-content;
+
+    .img {
+      height: auto;
+      width: 90%;
+      border-radius: 10px;
+    }
+
+    .skills {
+      width: 90%;
+      display: grid;
+      grid-template-columns: repeat(8, 1fr);
+      gap: 15px;
+      row-gap: 48px;
+
+      @media screen and (max-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 15px;
+      }
+
+      @media screen and (max-width: 500px) {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+
+
+      .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+
+        .icon {
+          width: 64px;
+          height: 64px;
+
+          @media screen and (max-width: 500px) {
+            width: 50px;
+            height: 50px;
+          }
+
+          @media screen and (max-width: 400px) {
+            width: 32px;
+            height: 32px;
+          }
+        }
+
+        > p {
+          font-size: 18px;
+
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 130px;
+
+          @media screen and (max-width: 500px) {
+            font-size: 16px;
+            max-width: 100px;
+          }
+
+          @media screen and (max-width: 400px) {
+            font-size: 14px;
+            max-width: 80px;
+          }
+        }
+      }
+    }
+  }
+}

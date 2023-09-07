@@ -1,0 +1,29 @@
+.container {
+  margin-top: 35px;
+
+  .title {
+    text-align: center;
+  }
+
+  .projects {
+    padding: 10px 0;
+    height: fit-content;
+    width: 100%;
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+
+    @media screen and (max-width: 1500px) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @media screen and (max-width: 940px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media screen and (max-width: 600px) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}
