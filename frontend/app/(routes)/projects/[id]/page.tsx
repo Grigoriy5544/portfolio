@@ -11,13 +11,6 @@ interface PageProps {
     }
 }
 
-export async function generateMetadata({params, searchParams}: any) {
-    return {
-        title: 'Проект',
-        description: 'Grigoriy Kotsenko projects',
-    }
-}
-
 const Page = ({params}: PageProps) => {
     const {data: project, isLoading, error} = useGetProjectQuery(params.id)
 
