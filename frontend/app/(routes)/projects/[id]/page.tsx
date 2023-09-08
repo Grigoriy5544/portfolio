@@ -40,18 +40,22 @@ const Page = ({params}: PageProps) => {
     return (
         <div className={"container " + styles.container}>
             <div className={styles.card}>
-                <h1>{project.name}</h1>
-                <Image className={styles.img} height={576} width={768}
-                       src={process.env.NEXT_PUBLIC_API_URL + project.bigImg}/>
-                <div className={styles.skills}>
-                    {project.skills.map(skill =>
-                        <div key={skill.name} className={styles.skill}>
-                            <Image className={styles.icon} src={process.env.NEXT_PUBLIC_API_URL + skill.img} alt={skill.name} width={64}
-                                   height={64}/>
-                            <p>{skill.name}</p>
+                {project && (
+                    <>
+                     <h1>{project.name}</h1>
+                        <Image className={styles.img} height={576} width={768}
+                            src={process.env.NEXT_PUBLIC_API_URL + project.bigImg} alt={project.name}/>
+                        <div className={styles.skills}>
+                            {project.skills.map(skill =>
+                                <div key={skill.name} className={styles.skill}>
+                                    <Image className={styles.icon} src={process.env.NEXT_PUBLIC_API_URL + skill.img} alt={skill.name} width={64}
+                                        height={64}/>
+                                    <p>{skill.name}</p>
+                                </div>
+                            )}
                         </div>
-                    )}
-                </div>
+                    </>
+                )}
             </div>
         </div>
     )
