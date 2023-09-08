@@ -5,6 +5,6 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL
 export const api = createApi({
     reducerPath: 'api',
     tagTypes: ['Skills', 'Projects'],
-    baseQuery: fetchBaseQuery({ baseUrl: API_URL }),
+    baseQuery: fetchBaseQuery({ baseUrl: API_URL + 'api/' }),
     endpoints: () => ({}),
 })
