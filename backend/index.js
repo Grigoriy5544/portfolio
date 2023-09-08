@@ -1,7 +1,6 @@
 require('dotenv').config()
 const express = require('express')
 const cors = require('cors')
-const skills = require('./skills')
 const sequelize = require('./db')
 const router = require('./router/index')
 const fileUpload = require('express-fileupload')
@@ -30,5 +29,3 @@ const start = async () => {
 }
 
 start()
-
-module.exports = app
