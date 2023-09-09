@@ -25,7 +25,7 @@ class SkillsController {
 			})
 			const resPath = path.resolve(__dirname, '..', 'public', fileName)
 			img.mv(resPath)
-			return res.json({ ...skill, resPath })
+			return res.json(resPath)
 		} catch (e) {
 			console.log(e)
 			return res.status(400).send({ message: e.message })
