@@ -24,6 +24,7 @@ class SkillsController {
 				img: fileName,
 			})
 			img.mv(path.resolve(__dirname, '..', 'public', fileName))
+			console.log('\n\n\ndirname', __dirname)
 			return res.json(skill)
 		} catch (e) {
 			console.log(e)
